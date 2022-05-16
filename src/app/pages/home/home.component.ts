@@ -42,21 +42,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getRepos();
-    console.log(this.allCounts);
   }
 
   public getRepos(){
     this.flowData.dailyData()
     .subscribe(
       (response) =>{
-        // this.tempData = response;
         this.allValues = response.map((t: { value: any; }) => t.value);
         this.allCounts = response.map((t: {count:any;}) => t.count);
-        
-        console.log(this.allValues);
-        console.log(this.allCounts);
-        // chart1.xaxis['categories'] = this.allValues;
-        // chart1.series[0]['data'] = this.allCounts;
 
         this.chartOptions = {
           series: [
@@ -91,7 +84,7 @@ export class HomeComponent implements OnInit {
             text: "Line Chart"
           },
           xaxis: {
-            categories: this.allValues.flatMap(t => new Date(t))
+            categories: this.allValues
           }
         };
         
