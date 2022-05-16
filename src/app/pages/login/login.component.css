@@ -1,0 +1,12 @@
+.main-div mat-card{
+    padding: 0px;
+}
+
+.login-form {
+    padding: 10px;
+}
+
+.login-title{
+    background: slateblue;
+    color:white;
+}

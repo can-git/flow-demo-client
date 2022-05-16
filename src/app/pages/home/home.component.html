@@ -1,0 +1,16 @@
+<app-toolbar></app-toolbar>
+<!-- <div *ngIf="chart">
+    <canvas id="canvas" width="400" height="400">{{chart}}</canvas>
+</div> -->
+<div class="container">
+    <div class="chart-body" style="width:600px;height: 400px;">
+        <apx-chart
+            class="apex-charts"
+            [series]="chartOptions.series"
+            [chart]="chartOptions.chart"
+            [title]="chartOptions.title"
+            [xaxis]="chartOptions.xaxis"
+        >
+        </apx-chart>
+    </div>
+</div>
