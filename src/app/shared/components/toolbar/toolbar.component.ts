@@ -9,18 +9,18 @@ import { JwtSecurityService } from 'src/app/services/jwt-security.service';
 })
 export class ToolbarComponent implements OnInit {
 
-  
+
 
   constructor(private JwtSecurityService:JwtSecurityService) { }
 
   ngOnInit(): void {
-    
+
   }
 
   public showToken(){
     this.JwtSecurityService.getSpecialToken(sessionStorage.getItem("token"))
     .subscribe((response) => {
-      alert(response);
+      alert(JSON.parse(response)["token"]);
     })
   }
 

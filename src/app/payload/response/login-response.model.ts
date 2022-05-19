@@ -1,6 +1,10 @@
 export class LoginResponse {
-    token:string;
-    constructor(token:string){
-        this.token = token;
+    idToken:string;
+    tokenType:string;
+    roles:string[];
+    constructor(idToken:string, tokenType:string, roles:string[]){
+        this.idToken = idToken;
+        this.tokenType = tokenType;
+        this.roles = roles;
     }
 }

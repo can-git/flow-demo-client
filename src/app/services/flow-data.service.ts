@@ -13,6 +13,6 @@ export class FlowDataService {
   dailyData(): Observable<any>{
     let tokenStr = 'Bearer ' + sessionStorage.getItem('token');
     const headers = new HttpHeaders().set('Authorization',tokenStr);
-    return this.http.get<FlowData[]>("http://localhost:8080/home",{headers});  
+    return this.http.get<FlowData[]>("http://localhost:8080/home",{headers});
   }
 }

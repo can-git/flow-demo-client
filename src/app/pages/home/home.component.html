@@ -5,6 +5,7 @@
 <div class="container">
     <div class="chart-body" style="width:600px;height: 400px;">
         <apx-chart
+            *ngIf="chartOptions"
             class="apex-charts"
             [series]="chartOptions.series"
             [chart]="chartOptions.chart"

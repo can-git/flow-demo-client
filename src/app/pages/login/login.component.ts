@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   response:any
 
-  constructor(private fb:FormBuilder, 
+  constructor(private fb:FormBuilder,
     private service:JwtSecurityService,
     private dataService:FlowDataService,
     private router:Router) { }
@@ -41,14 +41,17 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.getAccessToken(new LoginRequest(
-      this.loginForm.get("username")?.value, 
+      this.loginForm.get("username")?.value,
       this.loginForm.get("password")?.value)
     );
   }
 
   public getAccessToken(LoginReq:any){
     this.service.generateToken(LoginReq)
-      .subscribe((data) => this.saveToken(data));
+      .subscribe((response) => {
+        var data = JSON.parse(response)
+        this.saveToken(data["idToken"])
+      });
   }
 
   public saveToken(token:any){
